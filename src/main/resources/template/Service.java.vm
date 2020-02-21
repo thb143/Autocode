@@ -1,0 +1,26 @@
+#if($moduleName == '')
+package ${package}.service;
+
+import ${package}.entity.${className}Entity;
+#else
+package ${package}.${moduleName}.service;
+
+import ${package}.${moduleName}.entity.${className}Entity;
+#end
+import com.baomidou.mybatisplus.service.IService;
+import ${mainPath}.common.utils.PageUtils;
+
+import java.util.Map;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}Service extends IService<${className}Entity> {
+
+    PageUtils queryPage(Map<String, Object> params);
+}
+

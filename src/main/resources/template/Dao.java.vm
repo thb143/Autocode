@@ -1,0 +1,19 @@
+#if($moduleName == '')
+package ${package}.entity;
+#else
+package ${package}.${moduleName}.entity;
+#end
+
+import ${package}.${moduleName}.entity.${className}Entity;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}Dao extends BaseMapper<${className}Entity> {
+	
+}

@@ -1,0 +1,52 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /autocode
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    #driverClassName: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://cdb-jl2xa0qx.gz.tencentcdb.com:10064/cn_buy?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    #username: dev01
+    #password: topxtopxr1234!
+    #url: jdbc:mysql://129.204.179.250:3306/cn_buy?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    #username: root
+    #password: dev0134!
+    #oracle配置
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@47.112.148.108:1521:orcl
+    username: houseloan
+    password: houseloan
+    #SQLServer配置
+#    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://192.168.10.10:1433;DatabaseName=cn_buy
+#    username: sa
+#    password: 123456
+    #PostgreSQL配置
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://192.168.10.10:5432/cn_buy
+#    username: postgres
+#    password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+
+
+mybatis:
+  mapperLocations: classpath*:com/tanhuanbin/**/xml/*.xml
+
+
+pagehelper:
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+#指定数据库，可选值有【mysql、oracle、sqlserver、postgresql】
+autocode:
+  database: oracle
